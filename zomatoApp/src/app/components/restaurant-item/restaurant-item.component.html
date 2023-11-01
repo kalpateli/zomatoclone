@@ -1,1 +1,43 @@
-<p>restaurant-item works!</p>
+<div class="row">
+    <div class="col-4" *ngFor="let item of foodItem">
+      <div class="card ">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <img [src]="item.photoUrl" class="img-height" alt="card Image">
+            </div>
+            <div class="col-9 text-end">
+                <p class="card-title">
+                    {{item.menuItemName}}
+                </p>
+                <p>
+                    <!-- using pipe -->
+                    <small>
+                        {{item.description | slice : 0-50}}  
+
+                    </small>
+                </p>
+            </div>
+          </div>
+          <div class="row">
+        
+            <div class="col-3 text-center">
+              <p class="card-title">
+                <i class="fa-solid fa-indian-rupee-sign"></i>{{item.price}} </p>
+            </div>
+            <div class="col text-end">
+              <button class="btn btn-success btn-sm" >
+                Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" *ngIf="foodItem.length == 0">
+        <p>Currently no items Present!!</p>
+    </div>
+  </div>
+  

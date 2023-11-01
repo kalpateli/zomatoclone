@@ -15,7 +15,7 @@ export class RestaurantItemComponent {
   constructor( private activatedRoute : ActivatedRoute, private foodService : FoodServiceService){
     this.activatedRoute.params.subscribe((res : any)=>{
       this.currentCategoryId = res.foodId;
-      this.currentRestaurantId = res.restaurant;
+       this.currentRestaurantId = res.restaurant;
       this.loadFoodItem();
     })
   }
