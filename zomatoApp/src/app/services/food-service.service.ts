@@ -21,6 +21,11 @@ export class FoodServiceService {
 
   //https://freeapi.miniprojectideas.com/api/zomato/GetRestaurantServingByCategoryId
   getRestaurantByCategoryId( foodCategoryId : number) : Observable<any>{
-    return this.http.get(this.apiEndPoint + "GetRestaurantServingByCategoryId" + foodCategoryId)
+    return this.http.get(this.apiEndPoint + "GetRestaurantServingByCategoryId?categoryId=" + foodCategoryId)
+  }
+
+  //https://freeapi.miniprojectideas.com/api/zomato/GetFoodItemOfRestaurantByCategory
+  getFoodItemOfRestaurantByCategory(foodCategoryId : number , restaurantId :number) : Observable<any>{
+    return this.http.get(this.apiEndPoint + "GetFoodItemOfRestaurantByCategory?restaurantId=" + restaurantId +  "&categoryId=" + foodCategoryId)
   }
 }
