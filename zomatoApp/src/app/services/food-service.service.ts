@@ -26,6 +26,6 @@ export class FoodServiceService {
 
   //https://freeapi.miniprojectideas.com/api/zomato/GetFoodItemOfRestaurantByCategory
   getFoodItemOfRestaurantByCategory(foodCategoryId : number , restaurantId :number) : Observable<any>{
-    return this.http.get(this.apiEndPoint + "GetFoodItemOfRestaurantByCategory?restaurantId=" + restaurantId +  "&categoryId=" + foodCategoryId)
+    return this.http.get(this.apiEndPoint + "GetFoodItemOfRestaurantByCategory?restaurantId="+restaurantId+"&categoryId="+foodCategoryId)
   }
 }
